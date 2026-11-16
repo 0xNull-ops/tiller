@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node", "electron"],
+    "lib": ["ESNext", "DOM", "esnext.disposable"]
+  },
+  "include": [
+    "src",
+    "vite.config.ts",
+    "../../scripts/lib",
+    "../web/src/fork/brandPlugin.ts" /* fork(launch) */,
+    "../web/src/fork/brand.ts" /* fork(workflows) */,
+    "../web/src/fork/brandAssets.ts" /* fork(workflows) */
+  ]
+}

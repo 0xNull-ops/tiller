@@ -1,0 +1,760 @@
+[
+  {
+    "id": "landing-page-in-an-afternoon",
+    "version": 1,
+    "skills": {
+      "research": "mattpocock/skills/research",
+      "copywriting": "coreyhaines31/marketingskills/copywriting",
+      "frontend-design": "anthropics/skills/frontend-design",
+      "impeccable": "pbakaus/impeccable/impeccable",
+      "deploy-to-vercel": "vercel-labs/agent-skills/deploy-to-vercel"
+    },
+    "requires": [],
+    "definition": {
+      "version": 3,
+      "name": "Landing Page in an Afternoon",
+      "brief": "From a one-line idea to a deployed landing page.",
+      "tags": ["web", "design", "launch"],
+      "inputs": [
+        {
+          "id": "product",
+          "label": "product",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "audience",
+          "label": "audience",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "cta",
+          "label": "cta",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "research",
+          "title": "Research",
+          "skill": "research",
+          "note": "Who is {{input.audience}}; 3 competitors; their promise and proof"
+        },
+        {
+          "id": "copy",
+          "title": "Copy",
+          "skill": "copywriting",
+          "note": "Hero, 3 benefits, social proof, FAQ, CTA \"{{input.cta}}\""
+        },
+        {
+          "id": "design-build",
+          "title": "Design & build",
+          "skill": "frontend-design",
+          "note": "Build the page from the copy; responsive; no stock clichés"
+        },
+        {
+          "id": "polish",
+          "title": "Polish",
+          "skill": "impeccable",
+          "note": "Critique and fix hierarchy, spacing, type, contrast"
+        },
+        {
+          "id": "deploy",
+          "title": "Deploy",
+          "skill": "deploy-to-vercel",
+          "note": "Gate. Deploy a preview, and report the URL",
+          "gate": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "launch-video",
+    "version": 1,
+    "skills": {
+      "copywriting": "coreyhaines31/marketingskills/copywriting",
+      "remotion-create": "remotion-dev/skills/remotion-create",
+      "remotion-best-practices": "remotion-dev/skills/remotion-best-practices",
+      "remotion-captions": "remotion-dev/skills/remotion-captions",
+      "remotion-render": "remotion-dev/skills/remotion-render"
+    },
+    "requires": [],
+    "definition": {
+      "version": 3,
+      "name": "Launch Video",
+      "brief": "A crisp product launch video in Remotion.",
+      "tags": ["video", "launch", "marketing"],
+      "inputs": [
+        {
+          "id": "product",
+          "label": "product",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "length",
+          "label": "length",
+          "kind": "text",
+          "required": true,
+          "defaultValue": "30s"
+        }
+      ],
+      "steps": [
+        {
+          "id": "script",
+          "title": "Script",
+          "skill": "copywriting",
+          "note": "A 30s script: hook, problem, reveal, 3 features, CTA"
+        },
+        {
+          "id": "scaffold",
+          "title": "Scaffold",
+          "skill": "remotion-create",
+          "note": "A Remotion project, 1920×1080, scenes from the script"
+        },
+        {
+          "id": "animate",
+          "title": "Animate",
+          "skill": "remotion-best-practices",
+          "note": "Motion per scene; consistent easing; brand colours"
+        },
+        {
+          "id": "captions",
+          "title": "Captions",
+          "skill": "remotion-captions",
+          "note": "Burned-in captions for silent autoplay"
+        },
+        {
+          "id": "render",
+          "title": "Render",
+          "skill": "remotion-render",
+          "note": "Render MP4 and a 9:16 cut; list the output files"
+        }
+      ]
+    }
+  },
+  {
+    "id": "weekly-seo-check-up",
+    "version": 1,
+    "skills": {
+      "seo-audit": "coreyhaines31/marketingskills/seo-audit",
+      "accessibility": "addyosmani/web-quality-skills/accessibility",
+      "research": "mattpocock/skills/research",
+      "frontend-design": "anthropics/skills/frontend-design",
+      "code-review": "mattpocock/skills/code-review"
+    },
+    "requires": [],
+    "definition": {
+      "version": 3,
+      "name": "Weekly SEO Check-up",
+      "brief": "A weekly audit that fixes the top issues.",
+      "tags": ["seo", "web", "growth"],
+      "inputs": [
+        {
+          "id": "site",
+          "label": "site",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "audit",
+          "title": "Audit",
+          "skill": "seo-audit",
+          "note": "Audit {{input.site}}; rank the issues by impact"
+        },
+        {
+          "id": "accessibility",
+          "title": "Accessibility",
+          "skill": "accessibility",
+          "note": "WCAG pass on the top pages"
+        },
+        {
+          "id": "plan",
+          "title": "Plan",
+          "skill": "research",
+          "note": "Pick the 3 highest-impact fixes this week"
+        },
+        {
+          "id": "fix",
+          "title": "Fix",
+          "skill": "frontend-design",
+          "note": "Implement the 3 fixes"
+        },
+        {
+          "id": "review",
+          "title": "Review",
+          "skill": "code-review",
+          "note": "Review after. Check the diff before merge",
+          "pauseAfter": true
+        }
+      ],
+      "trigger": "schedule"
+    },
+    "schedule": {
+      "type": "fixed_time",
+      "timeOfDay": "09:00",
+      "weekdays": [1]
+    }
+  },
+  {
+    "id": "blog-post-from-an-idea",
+    "version": 1,
+    "skills": {
+      "content-strategy": "coreyhaines31/marketingskills/content-strategy",
+      "copywriting": "coreyhaines31/marketingskills/copywriting",
+      "copy-editing": "coreyhaines31/marketingskills/copy-editing",
+      "ai-seo": "coreyhaines31/marketingskills/ai-seo"
+    },
+    "requires": [],
+    "definition": {
+      "version": 3,
+      "name": "Blog Post from an Idea",
+      "brief": "One idea in, a polished, search-ready post out.",
+      "tags": ["content", "seo", "marketing"],
+      "inputs": [
+        {
+          "id": "topic",
+          "label": "topic",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "audience",
+          "label": "audience",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "plan",
+          "title": "Plan",
+          "skill": "content-strategy",
+          "note": "Angle, outline and keywords for {{input.topic}}, written for {{input.audience}}"
+        },
+        {
+          "id": "draft",
+          "title": "Draft",
+          "skill": "copywriting",
+          "note": "Write the post from the outline"
+        },
+        {
+          "id": "edit",
+          "title": "Edit",
+          "skill": "copy-editing",
+          "note": "Tighten, cut filler, check facts and flow"
+        },
+        {
+          "id": "seo",
+          "title": "SEO",
+          "skill": "ai-seo",
+          "note": "Review after. Title, meta, headings; save as Markdown in `content/`",
+          "pauseAfter": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "brand-kit",
+    "version": 1,
+    "skills": {
+      "research": "mattpocock/skills/research",
+      "brand-identity": "arnabbagxd/brand-building-skills/brand-identity",
+      "design-taste-frontend": "leonxlnx/taste-skill/design-taste-frontend",
+      "frontend-design": "anthropics/skills/frontend-design",
+      "impeccable": "pbakaus/impeccable/impeccable",
+      "logo-generator": "op7418/logo-generator-skill/logo-generator"
+    },
+    "requires": ["loops"],
+    "definition": {
+      "version": 3,
+      "name": "Brand Kit",
+      "brief": "Name feel, logo, palette, type and a brand page.",
+      "tags": ["brand", "design"],
+      "inputs": [
+        {
+          "id": "company",
+          "label": "company",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "vibe",
+          "label": "vibe",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "research",
+          "title": "Research",
+          "skill": "research",
+          "note": "The category's visual language; what to avoid"
+        },
+        {
+          "id": "identity",
+          "title": "Identity",
+          "skill": "brand-identity",
+          "note": "Positioning, voice, the {{input.vibe}} direction"
+        },
+        {
+          "id": "logo",
+          "title": "Logo",
+          "skill": "logo-generator",
+          "note": "3 SVG logo options, then refine 1"
+        },
+        {
+          "id": "palette-type",
+          "title": "Palette & type",
+          "skill": "design-taste-frontend",
+          "note": "Colours (with contrast), type pairing, tokens"
+        },
+        {
+          "id": "brand-page",
+          "title": "Brand page",
+          "skill": "frontend-design",
+          "note": "One-page brand guide"
+        },
+        {
+          "id": "review",
+          "title": "Review",
+          "skill": "impeccable",
+          "note": "Critique; loop back to Logo, up to 1× (requires C)"
+        }
+      ],
+      "loops": [
+        {
+          "id": "review-loop",
+          "from": "review",
+          "to": "logo",
+          "maxRounds": 2,
+          "until": {
+            "kind": "step-says-pass"
+          },
+          "feedback": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "product-launch-pack",
+    "version": 1,
+    "skills": {
+      "customer-research": "coreyhaines31/marketingskills/customer-research",
+      "marketing-plan": "coreyhaines31/marketingskills/marketing-plan",
+      "copywriting": "coreyhaines31/marketingskills/copywriting",
+      "frontend-design": "anthropics/skills/frontend-design",
+      "hyperframes": "heygen-com/hyperframes/hyperframes",
+      "deploy-to-vercel": "vercel-labs/agent-skills/deploy-to-vercel",
+      "analytics": "coreyhaines31/marketingskills/analytics"
+    },
+    "requires": [],
+    "definition": {
+      "version": 3,
+      "name": "Product Launch Pack",
+      "brief": "Everything for launch day.",
+      "tags": ["launch", "marketing", "web", "video"],
+      "inputs": [
+        {
+          "id": "product",
+          "label": "product",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "audience",
+          "label": "audience",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "launchDate",
+          "label": "launchDate",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "customer-research",
+          "title": "Customer research",
+          "skill": "customer-research",
+          "note": "Pains, words customers use"
+        },
+        {
+          "id": "positioning",
+          "title": "Positioning",
+          "skill": "marketing-plan",
+          "note": "Positioning, channels, timeline to {{input.launchDate}}"
+        },
+        {
+          "id": "copy",
+          "title": "Copy",
+          "skill": "copywriting",
+          "note": "Landing page, launch post, email"
+        },
+        {
+          "id": "landing-page",
+          "title": "Landing page",
+          "skill": "frontend-design",
+          "note": "Reads Copy and Positioning",
+          "readsFrom": ["copy", "positioning"]
+        },
+        {
+          "id": "launch-video",
+          "title": "Launch video",
+          "skill": "hyperframes",
+          "note": "A 20s teaser"
+        },
+        {
+          "id": "social-posts",
+          "title": "Social posts",
+          "skill": "copywriting",
+          "note": "5 posts, X and LinkedIn variants"
+        },
+        {
+          "id": "analytics",
+          "title": "Analytics",
+          "skill": "analytics",
+          "note": "Events for the CTA and signup"
+        },
+        {
+          "id": "deploy",
+          "title": "Deploy",
+          "skill": "deploy-to-vercel",
+          "note": "Gate",
+          "gate": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "motion-ad-studio",
+    "version": 1,
+    "skills": {
+      "copywriting": "coreyhaines31/marketingskills/copywriting",
+      "hyperframes": "heygen-com/hyperframes/hyperframes",
+      "hyperframes-registry": "heygen-com/hyperframes/hyperframes-registry",
+      "impeccable": "pbakaus/impeccable/impeccable",
+      "hyperframes-cli": "heygen-com/hyperframes/hyperframes-cli"
+    },
+    "requires": ["loops"],
+    "definition": {
+      "version": 3,
+      "name": "Motion Ad Studio",
+      "brief": "Short motion ads with HyperFrames, reviewed until they're punchy.",
+      "tags": ["video", "marketing"],
+      "inputs": [
+        {
+          "id": "offer",
+          "label": "offer",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "format",
+          "label": "format",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "brief",
+          "title": "Brief",
+          "skill": "copywriting",
+          "note": "Hook, angle, 3 variants for {{input.offer}}"
+        },
+        {
+          "id": "compose",
+          "title": "Compose",
+          "skill": "hyperframes",
+          "note": "Build the variants in {{input.format}}"
+        },
+        {
+          "id": "animate",
+          "title": "Animate",
+          "skill": "hyperframes",
+          "note": "Timing and transitions"
+        },
+        {
+          "id": "assets",
+          "title": "Assets",
+          "skill": "hyperframes-registry",
+          "note": "Use registry blocks over hand-built effects"
+        },
+        {
+          "id": "review",
+          "title": "Review",
+          "skill": "impeccable",
+          "note": "Is the hook in the first 2s? Loop back to Compose, up to 2× (requires C)"
+        },
+        {
+          "id": "render",
+          "title": "Render",
+          "skill": "hyperframes-cli",
+          "note": "Render all variants; list the files"
+        }
+      ],
+      "loops": [
+        {
+          "id": "review-loop",
+          "from": "review",
+          "to": "compose",
+          "maxRounds": 3,
+          "until": {
+            "kind": "step-says-pass"
+          },
+          "feedback": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "website-makeover",
+    "version": 1,
+    "skills": {
+      "web-design-guidelines": "vercel-labs/agent-skills/web-design-guidelines",
+      "copy-editing": "coreyhaines31/marketingskills/copy-editing",
+      "frontend-design": "anthropics/skills/frontend-design",
+      "impeccable": "pbakaus/impeccable/impeccable",
+      "deploy-to-vercel": "vercel-labs/agent-skills/deploy-to-vercel",
+      "cro": "coreyhaines31/marketingskills/cro"
+    },
+    "requires": [],
+    "definition": {
+      "version": 3,
+      "name": "Website Makeover",
+      "brief": "Review an existing site, fix what's hurting it, and ship the refresh.",
+      "tags": ["web", "design", "growth"],
+      "inputs": [
+        {
+          "id": "site",
+          "label": "site",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "goal",
+          "label": "goal",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "review",
+          "title": "Review",
+          "skill": "web-design-guidelines",
+          "note": "Check {{input.site}} against the guidelines; list issues"
+        },
+        {
+          "id": "conversion",
+          "title": "Conversion",
+          "skill": "cro",
+          "note": "What stops visitors from doing \"{{input.goal}}\""
+        },
+        {
+          "id": "copy",
+          "title": "Copy",
+          "skill": "copy-editing",
+          "note": "Sharpen the headline, CTAs and the weakest section"
+        },
+        {
+          "id": "redesign",
+          "title": "Redesign",
+          "skill": "frontend-design",
+          "note": "Apply the fixes from Review, Conversion and Copy",
+          "readsFrom": ["review", "conversion", "copy"]
+        },
+        {
+          "id": "polish",
+          "title": "Polish",
+          "skill": "impeccable",
+          "note": "Hierarchy, spacing, type, contrast"
+        },
+        {
+          "id": "deploy",
+          "title": "Deploy",
+          "skill": "deploy-to-vercel",
+          "note": "Gate. Deploy a preview, and report the URL",
+          "gate": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "weekly-growth-loop",
+    "version": 1,
+    "skills": {
+      "analytics": "coreyhaines31/marketingskills/analytics",
+      "landing-page-conversion-audit": "autonnel/autonnel-skills/landing-page-conversion-audit",
+      "copywriting": "coreyhaines31/marketingskills/copywriting",
+      "frontend-design": "anthropics/skills/frontend-design",
+      "seo-audit": "coreyhaines31/marketingskills/seo-audit",
+      "research": "mattpocock/skills/research"
+    },
+    "requires": ["loops"],
+    "definition": {
+      "version": 3,
+      "name": "Weekly Growth Loop",
+      "brief": "Every week, improve one page using last week's learnings.",
+      "tags": ["growth", "web", "marketing"],
+      "inputs": [
+        {
+          "id": "site",
+          "label": "site",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "page",
+          "label": "page",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "analytics",
+          "title": "Analytics",
+          "skill": "analytics",
+          "note": "What changed since last week; read {{last.result}}"
+        },
+        {
+          "id": "conversion-audit",
+          "title": "Conversion audit",
+          "skill": "landing-page-conversion-audit",
+          "note": "Audit /{{input.page}}"
+        },
+        {
+          "id": "rewrite",
+          "title": "Rewrite",
+          "skill": "copywriting",
+          "note": "Rewrite the weakest section"
+        },
+        {
+          "id": "implement",
+          "title": "Implement",
+          "skill": "frontend-design",
+          "note": "Ship the change behind a flag if one exists"
+        },
+        {
+          "id": "seo",
+          "title": "SEO",
+          "skill": "seo-audit",
+          "note": "Keep the meta and headings right"
+        },
+        {
+          "id": "report",
+          "title": "Report",
+          "skill": "research",
+          "note": "Review after. What we changed and what to measure next week",
+          "pauseAfter": true
+        }
+      ],
+      "trigger": "schedule"
+    },
+    "schedule": {
+      "type": "fixed_time",
+      "timeOfDay": "10:00",
+      "weekdays": [5]
+    },
+    "knobs": {
+      "carryOver": true,
+      "rotate": {
+        "inputId": "page",
+        "values": ["home", "pricing", "features", "signup"],
+        "next": 0
+      }
+    }
+  },
+  {
+    "id": "investor-pitch-deck",
+    "version": 1,
+    "skills": {
+      "research": "mattpocock/skills/research",
+      "copywriting": "coreyhaines31/marketingskills/copywriting",
+      "pitch-deck": "anthropics/financial-services/pitch-deck",
+      "pptx": "anthropics/skills/pptx",
+      "design-taste-frontend": "leonxlnx/taste-skill/design-taste-frontend",
+      "impeccable": "pbakaus/impeccable/impeccable"
+    },
+    "requires": ["loops"],
+    "definition": {
+      "version": 3,
+      "name": "Investor Pitch Deck",
+      "brief": "A narrative-first deck, built as slides.",
+      "tags": ["content", "research"],
+      "inputs": [
+        {
+          "id": "company",
+          "label": "company",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "id": "stage",
+          "label": "stage",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "research",
+          "title": "Research",
+          "skill": "research",
+          "note": "Market size, comparables, why now"
+        },
+        {
+          "id": "narrative",
+          "title": "Narrative",
+          "skill": "copywriting",
+          "note": "A 12-slide story: problem → traction → ask"
+        },
+        {
+          "id": "pitch-structure",
+          "title": "Pitch structure",
+          "skill": "pitch-deck",
+          "note": "Fit the {{input.stage}} investor expectations"
+        },
+        {
+          "id": "slides",
+          "title": "Slides",
+          "skill": "pptx",
+          "note": "Build the .pptx from the narrative"
+        },
+        {
+          "id": "visuals",
+          "title": "Visuals",
+          "skill": "design-taste-frontend",
+          "note": "Charts and visual polish"
+        },
+        {
+          "id": "review",
+          "title": "Review",
+          "skill": "impeccable",
+          "note": "Critique; loop back to Narrative, up to 1× (requires C)"
+        }
+      ],
+      "loops": [
+        {
+          "id": "review-loop",
+          "from": "review",
+          "to": "narrative",
+          "maxRounds": 2,
+          "until": {
+            "kind": "step-says-pass"
+          },
+          "feedback": true
+        }
+      ]
+    }
+  }
+]

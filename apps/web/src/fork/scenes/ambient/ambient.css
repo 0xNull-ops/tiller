@@ -1,0 +1,38 @@
+[data-scene-ambient] {
+  pointer-events: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+[data-scene-ambient="frame"] {
+  position: fixed;
+  z-index: -1;
+}
+html[data-tiller-scene] body {
+  isolation: isolate;
+}
+[data-scene-ambient="chat"] {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.15;
+}
+html[data-tiller-scene] [data-workspace-area="conversation"] {
+  position: relative;
+  isolation: isolate;
+}
+[data-workspace-area="conversation"] > :not([data-scene-ambient]) {
+  position: relative;
+  z-index: 1;
+}
+
+[data-scene-ambient="banner"] {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.85;
+}
+[data-scene-ambient="frame"] {
+  z-index: 1;
+}
+[data-scene-ambient="chat"] {
+  opacity: 0.5;
+}

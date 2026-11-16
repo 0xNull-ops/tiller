@@ -1,0 +1,101 @@
+import { T3_CODE_DARK_THEME_COLORS, type ThemeDefinition } from "@t3tools/shared/themePalettes";
+
+import type { SceneManifest } from "../../manifest";
+import avatar from "./assets/avatar-user.webp";
+import banner from "./assets/banner.webp";
+import character from "./assets/character.webp";
+import chatBackdrop from "./assets/chat-backdrop.webp";
+import helicopter from "./assets/helicopter.webp";
+import logo from "./assets/logo.webp";
+
+const theme: ThemeDefinition = {
+  id: "neon-boulevard",
+  label: "Neon Boulevard",
+  appearance: "dark",
+  colors: {
+    ...T3_CODE_DARK_THEME_COLORS,
+    canvas: "#14091a",
+    chrome: "#14091a",
+    toolbar: "#170a1e",
+    toolbarForeground: "#fbeff8",
+    toolbarBorder: "#4a1d45",
+    toolbarControl: "#24102a",
+    toolbarControlForeground: "#fbeff8",
+    toolbarControlHover: "#351840",
+    surface: "#170b1d",
+    surfaceRaised: "#1f0f27",
+    surfaceOverlay: "#22102b",
+    text: "#fbeff8",
+    textMuted: "#cfa9c8",
+    border: "#4a1d45",
+    input: "#5c2554",
+    focus: "#ff4fa3",
+    accent: "#ffc21a",
+    accentForeground: "#1c0d06",
+    secondary: "#2c1334",
+    secondaryForeground: "#fbeff8",
+    muted: "#2a1230",
+    mutedForeground: "#c39bbd",
+    placeholder: "#a7809f",
+    secondaryLabel: "#cfa9c8",
+    iconMuted: "#b78bb0",
+    warningForeground: "#ffc21a",
+    accentSurface: "#2b1124",
+    accentSurfaceForeground: "#ffe08a",
+    messageSurface: "#1f0d24",
+    messageForeground: "#fbeff8",
+    messageAction: "#ff4fa3",
+    messageActionForeground: "#ffffff",
+    messageActionHover: "#ff6db4",
+    codeBackground: "#0f0613",
+    codeForeground: "#fbeff8",
+    sidebar: "#120817",
+    sidebarForeground: "#fbeff8",
+    sidebarMutedForeground: "#cfa9c8",
+    sidebarControlSurface: "#1f0e25",
+    sidebarRowHover: "#26112c",
+    sidebarRowActive: "#3a1438",
+    sidebarRowSelected: "#311233",
+    sidebarBorder: "#3b1638",
+    terminalBackground: "#0f0613",
+    terminalForeground: "#fbeff8",
+    terminalCursor: "#ff4fa3",
+    terminalSelection: "#4a1d45",
+    terminalScrollbar: "#3b1638",
+    terminalScrollbarHover: "#5c2554",
+  },
+};
+
+export const NEON_BOULEVARD: SceneManifest = {
+  theme,
+  ambient: { kind: "rain", intensity: "low" },
+  tagline: "1980s sunset city",
+  art: { banner, logo, character, chatBackdrop, userAvatar: avatar },
+  bannerFocus: { full: "62%", compact: "80%" },
+  look: {
+    frame: "#ff3d9a",
+    glow: "rgb(255 61 154 / 0.35)",
+    accent: "#ffc21a",
+    accentAlt: "#ffc21a",
+    ink: "#140a18",
+    paper: "#fbeff8",
+    backdrop:
+      "radial-gradient(120% 60% at 50% 0, rgb(255 61 154 / 0.22), transparent 70%), linear-gradient(180deg, #2a0d2c 0, #170a1e 260px, #120817)",
+    surface: "#120817",
+    chatTint: "23 11 29",
+    headingStyle: "italic",
+  },
+  map: {
+    terrain: "city",
+    path: "asphalt",
+    ground: "#3a3f48",
+    water: "#4f7fa6",
+    park: "#4d6b45",
+    block: "#555b66",
+    road: "#c9a94a",
+    route: "#ff3d9a",
+    traveler: "car",
+    trail: "line",
+  },
+  flyby: { image: helicopter, width: 110, everyMs: [35_000, 70_000] },
+};

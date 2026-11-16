@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Tiller app icon">
+<defs><linearGradient id="tile" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#232825"/><stop offset="1" stop-color="#181B19"/></linearGradient><linearGradient id="silver" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#F0F1EF"/><stop offset=".36" stop-color="#C7CBC8"/><stop offset=".72" stop-color="#ADB2AF"/><stop offset="1" stop-color="#D9DCDA"/></linearGradient><linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF" stop-opacity=".36"/><stop offset=".35" stop-color="#FFFFFF" stop-opacity=".06"/><stop offset="1" stop-color="#000000" stop-opacity=".16"/></linearGradient></defs>
+<path d="M 304 100 H 720 C 846 100 924 178 924 304 V 720 C 924 846 846 924 720 924 H 304 C 178 924 100 846 100 720 V 304 C 100 178 178 100 304 100 Z" fill="url(#tile)"/>
+<path d="M 304 101 H 720 C 845 101 923 179 923 304 V 720 C 923 845 845 923 720 923 H 304 C 179 923 101 845 101 720 V 304 C 101 179 179 101 304 101 Z" fill="none" stroke="url(#edge)" stroke-width="3"/>
+<path d="M 355 145 L 485 105 L 485 337 L 610 337 L 610 445 L 485 445 L 485 615 C 485 674 514 704 578 704 C 623 704 671 697 716 687 L 716 793 C 657 806 602 812 548 812 C 414 812 355 745 355 620 Z" transform="translate(110 98) scale(.81)" fill="url(#silver)"/>
+<circle cx="693" cy="409" r="56" fill="#A9C0A2" stroke="#D0DDCD" stroke-opacity=".25" stroke-width="4"/>
+</svg>

@@ -1,0 +1,101 @@
+import { T3_CODE_DARK_THEME_COLORS, type ThemeDefinition } from "@t3tools/shared/themePalettes";
+
+import type { SceneManifest } from "../../manifest";
+import avatar from "./assets/avatar-user.webp";
+import banner from "./assets/banner.webp";
+import character from "./assets/character.webp";
+import chatBackdrop from "./assets/chat-backdrop.webp";
+import corner from "./assets/corner.webp";
+import logo from "./assets/logo.webp";
+
+const theme: ThemeDefinition = {
+  id: "gilded-realm",
+  label: "Gilded Realm",
+  appearance: "dark",
+  colors: {
+    ...T3_CODE_DARK_THEME_COLORS,
+    canvas: "#0f0c08",
+    chrome: "#0f0c08",
+    toolbar: "#13100b",
+    toolbarForeground: "#f3e6c8",
+    toolbarBorder: "#3d3120",
+    toolbarControl: "#1d1810",
+    toolbarControlForeground: "#f3e6c8",
+    toolbarControlHover: "#2b2316",
+    surface: "#14110b",
+    surfaceRaised: "#1b1610",
+    surfaceOverlay: "#1e1912",
+    text: "#f3e6c8",
+    textMuted: "#bfa77a",
+    border: "#3d3120",
+    input: "#4c3d27",
+    focus: "#e2b45a",
+    accent: "#e2b45a",
+    accentForeground: "#1a1206",
+    secondary: "#251e14",
+    secondaryForeground: "#f3e6c8",
+    muted: "#231c13",
+    mutedForeground: "#b39b70",
+    placeholder: "#8f7a56",
+    secondaryLabel: "#bfa77a",
+    iconMuted: "#a68d60",
+    warningForeground: "#f0c56a",
+    accentSurface: "#2a2114",
+    accentSurfaceForeground: "#f5d995",
+    messageSurface: "#1a150e",
+    messageForeground: "#f3e6c8",
+    messageAction: "#c9973f",
+    messageActionForeground: "#1a1206",
+    messageActionHover: "#dcaa52",
+    codeBackground: "#0c0a06",
+    codeForeground: "#f3e6c8",
+    sidebar: "#0e0b07",
+    sidebarForeground: "#f3e6c8",
+    sidebarMutedForeground: "#bfa77a",
+    sidebarControlSurface: "#1a150e",
+    sidebarRowHover: "#211a11",
+    sidebarRowActive: "#2e2416",
+    sidebarRowSelected: "#2a2114",
+    sidebarBorder: "#33291b",
+    terminalBackground: "#0c0a06",
+    terminalForeground: "#f3e6c8",
+    terminalCursor: "#e2b45a",
+    terminalSelection: "#3d3120",
+    terminalScrollbar: "#33291b",
+    terminalScrollbarHover: "#4c3d27",
+  },
+};
+
+export const GILDED_REALM: SceneManifest = {
+  theme,
+  ambient: { kind: "embers", intensity: "low" },
+  tagline: "Dusk over a golden kingdom",
+  art: { banner, logo, character, chatBackdrop, userAvatar: avatar, corner },
+  bannerFocus: { full: "70%", compact: "78%" },
+  look: {
+    frame: "#b98a3e",
+    glow: "rgb(226 180 90 / 0.28)",
+    accent: "#e2b45a",
+    accentAlt: "#f5d995",
+    ink: "#1a1206",
+    paper: "#f3e6c8",
+    backdrop:
+      "radial-gradient(120% 60% at 50% 0, rgb(226 180 90 / 0.16), transparent 70%), linear-gradient(180deg, #2a2014 0, #120e09 260px, #0e0b07)",
+    surface: "#0e0b07",
+    chatTint: "20 16 11",
+    headingStyle: "serif",
+  },
+  map: {
+    terrain: "hills",
+    path: "stone",
+    ground: "#2b2418",
+    water: "#3c5560",
+    park: "#3a4526",
+    block: "#463a26",
+    road: "#9c7a3c",
+    route: "#e2b45a",
+    traveler: "rider",
+    trail: "prints",
+    style: "parchment",
+  },
+};

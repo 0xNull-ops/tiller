@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node"],
+    "lib": ["ESNext", "esnext.disposable"]
+  },
+  "include": [
+    "**/*.ts",
+    "../apps/web/src/fork/brand.ts" /* fork(workflows): dependency-free shared display names. */,
+    "../apps/web/src/fork/brandAssets.ts" /* fork(workflows): shared desktop icon paths. */
+  ]
+}

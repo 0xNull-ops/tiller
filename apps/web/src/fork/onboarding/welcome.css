@@ -1,0 +1,385 @@
+.tiller-welcome-dialog {
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: var(--background);
+}
+.tiller-welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--foreground);
+}
+.tiller-welcome-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: calc(var(--native-titlebar-height, 0px) + 28px) 40px 24px;
+}
+.tiller-welcome-progress {
+  display: flex;
+  gap: 22px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.tiller-welcome-progress li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.tiller-welcome-progress li[aria-current] {
+  color: var(--foreground);
+}
+.tiller-welcome-progress span {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 10px;
+}
+.tiller-welcome-progress li[aria-current] span {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+.tiller-welcome-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: min(1280px, 100%);
+  margin: auto;
+  padding: 40px 64px;
+  gap: 40px;
+}
+.tiller-welcome-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.tiller-welcome-copy h1 {
+  font-family: "Tiller Space Grotesk", var(--font-sans);
+  font-size: clamp(40px, 4.7vw, 68px);
+  line-height: 1.07;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+.tiller-welcome-copy p {
+  color: var(--muted-foreground);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 340px;
+}
+.tiller-welcome footer {
+  padding: 24px 40px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.tiller-welcome footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tiller-welcome footer a:hover {
+  color: var(--foreground);
+}
+.tiller-welcome-canvas {
+  height: 490px;
+  border-radius: 24px;
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  display: grid;
+  place-items: center;
+}
+.tiller-welcome-graph {
+  position: relative;
+  width: 400px;
+  height: 420px;
+}
+.tiller-welcome-card {
+  position: absolute;
+  width: 265px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  box-shadow: var(--shadow-xs);
+  padding: 16px;
+}
+.card-0 {
+  left: 12px;
+  top: 20px;
+}
+.card-1 {
+  left: 115px;
+  top: 160px;
+}
+.card-2 {
+  left: 32px;
+  top: 300px;
+}
+.tiller-welcome-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.tiller-welcome-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 14px;
+}
+.tiller-welcome-card-title svg {
+  color: var(--primary);
+}
+.tiller-welcome-card p {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  padding-left: 27px;
+}
+.tiller-welcome-status {
+  display: grid;
+}
+.tiller-welcome-status > span {
+  grid-area: 1/1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.tiller-welcome-status .queued {
+  animation: tiller-queued-0 12s infinite steps(1);
+}
+.tiller-welcome-status .running {
+  opacity: 0;
+  color: var(--primary);
+  animation: tiller-running-0 12s infinite steps(1);
+}
+.tiller-welcome-status .done {
+  opacity: 0;
+  color: var(--success);
+  animation: tiller-done-0 12s infinite steps(1);
+}
+@keyframes tiller-queued-0 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  8%,
+  99.9% {
+    opacity: 0;
+  }
+}
+@keyframes tiller-running-0 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+@keyframes tiller-done-0 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  99.9% {
+    opacity: 1;
+  }
+}
+.card-1 .queued {
+  animation-name: tiller-queued-1;
+}
+.card-1 .running {
+  animation-name: tiller-running-1;
+}
+.card-1 .done {
+  animation-name: tiller-done-1;
+}
+@keyframes tiller-queued-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  33%,
+  99.9% {
+    opacity: 0;
+  }
+}
+@keyframes tiller-running-1 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes tiller-done-1 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50%,
+  99.9% {
+    opacity: 1;
+  }
+}
+.card-2 .queued {
+  animation-name: tiller-queued-2;
+}
+.card-2 .running {
+  animation-name: tiller-running-2;
+}
+.card-2 .done {
+  animation-name: tiller-done-2;
+}
+@keyframes tiller-queued-2 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  58%,
+  99.9% {
+    opacity: 0;
+  }
+}
+@keyframes tiller-running-2 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  58% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes tiller-done-2 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  75%,
+  99.9% {
+    opacity: 1;
+  }
+}
+.tiller-welcome-edge {
+  position: absolute;
+  width: 2px;
+  height: 48px;
+  background: var(--border);
+}
+.edge-one {
+  top: 128px;
+  left: 235px;
+}
+.edge-two {
+  top: 268px;
+  left: 168px;
+}
+.tiller-welcome-edge i {
+  display: block;
+  width: 4px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--primary);
+  opacity: 0;
+  animation: tiller-spark 12s 3s infinite;
+}
+.edge-two i {
+  animation-delay: 6s;
+}
+@keyframes tiller-spark {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  1% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 1;
+    transform: translateY(36px);
+  }
+  8%,
+  100% {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+}
+.tiller-welcome[data-paused="true"] * {
+  animation-play-state: paused;
+}
+@media (max-width: 1000px) {
+  .tiller-welcome-body {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+  .tiller-welcome-canvas {
+    display: none;
+  }
+  .tiller-welcome-copy {
+    max-width: 540px;
+    margin: auto;
+    width: 100%;
+  }
+  .tiller-welcome-progress {
+    gap: 10px;
+  }
+  .tiller-welcome-header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media (max-width: 620px) {
+  .tiller-welcome-header {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .tiller-welcome-progress {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  .tiller-welcome-copy h1 {
+    font-size: 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tiller-welcome * {
+    animation: none !important;
+  }
+  .tiller-welcome-status .queued,
+  .tiller-welcome-status .running {
+    opacity: 0;
+  }
+  .tiller-welcome-status .done {
+    opacity: 1;
+  }
+  .tiller-welcome-edge i {
+    display: none;
+  }
+}
