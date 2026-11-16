@@ -9,6 +9,8 @@
   <a href="https://github.com/Antler-Web-Studios/tiller/issues">Issues</a>
 </p>
 
+> Tiller is a fork of [T3 Code](https://github.com/pingdotgg/t3code) by T3 Tools Inc. It is independent and not affiliated with or endorsed by the T3 Code team.
+
 Tiller is a desktop, web and mobile app for coding agents. Bring your own subscriptions (Codex,
 Claude Code, OpenCode, Cursor, Grok, Antigravity, Kiro and more) and drive them from one place.
 
